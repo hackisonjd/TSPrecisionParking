@@ -8,14 +8,30 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
         <div>
-            <asp:Button ID="btnNew" runat="server" Text="New Sensor"  OnClick="btnNew_Click"/><br />
+            <ul>
+                <li>
+                    <a href="index.aspx">index</a>
+                </li>
+                <li>
+                    <a href="AddRecording_Testpage.aspx">Add Recordings</a>
+                </li>
+                <li>
+                    <a href="ViewRecordings.aspx">View Recordings</a>
+                </li>
+            </ul>
+        </div>
+        <div style="margin-left: auto; margin-right: auto; text-align: center;">
+            <asp:Button ID="btnNew" runat="server" Text="New Sensor" OnClick="btnNew_Click" />
+            <br />
             <asp:DropDownList ID="ddlSensors" runat="server" DataSourceID="sqlsrcListSensors" DataTextField="SensorID" DataValueField="SensorID" AutoPostBack="true"></asp:DropDownList><br />
-            <asp:Button ID="btnLaunch" runat="server" Text="Launch Sensor" OnClick="btnLaunch_Click" /><br />
+            <asp:Button ID="btnLaunch" runat="server" Text="Launch Sensor" OnClick="btnLaunch_Click" />
+            <br />
         </div>
         <asp:SqlDataSource ID="sqlsrcListSensors" runat="server"
-        ConnectionString="<%$ ConnectionStrings:TSPP %>"
-        SelectCommand="SELECT SensorID FROM Sensor;"></asp:SqlDataSource>
+            ConnectionString="<%$ ConnectionStrings:TSPP %>"
+            SelectCommand="SELECT SensorID FROM Sensor;"></asp:SqlDataSource>
     </form>
 </body>
 </html>

@@ -8,6 +8,19 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div>
+                <ul>
+                    <li>
+                        <a href="index.aspx">index</a>
+                    </li>
+                    <li>
+                        <a href="AddRecording_Testpage.aspx">Add Recordings</a>
+                    </li>
+                    <li>
+                        <a href="ViewRecordings.aspx">View Recordings</a>
+                    </li>
+                </ul>
+            </div>
         <div style="margin-left:auto;margin-right:auto;text-align:center;">
             <h4>Change Sensor</h4>
             <asp:DropDownList ID="ddlSensors" runat="server" 

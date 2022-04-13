@@ -8,7 +8,20 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="margin-left:auto;margin-right:auto;text-align:center;">
+        <div>
+            <ul>
+                <li>
+                    <a href="index.aspx">index</a>
+                </li>
+                <li>
+                    <a href="AddRecording_Testpage.aspx">Add Recordings</a>
+                </li>
+                <li>
+                    <a href="ViewRecordings.aspx">View Recordings</a>
+                </li>
+            </ul>
+        </div>
+        <div style="margin-left: auto; margin-right: auto; text-align: center;">
             <h3>Select sensor</h3>
             <asp:DropDownList ID="ddlSensors" runat="server" DataSourceID="sqlsrcSensors" DataTextField="SensorID" DataValueField="SensorID" AutoPostBack="true"></asp:DropDownList><br />
             <br />
@@ -16,7 +29,7 @@
             <br />
             <br />
             <asp:Button ID="btnInsert" runat="server" Text="Insert Reading" OnClick="btnInsert_Click" />
-            
+
             <asp:SqlDataSource ID="sqlsrcSensors" runat="server"
                 ConnectionString="<%$ ConnectionStrings:TSPP %>"
                 SelectCommand="SELECT SensorID FROM Sensor"></asp:SqlDataSource>
