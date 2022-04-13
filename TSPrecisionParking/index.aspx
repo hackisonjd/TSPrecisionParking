@@ -12,7 +12,7 @@
         <div>
             <ul>
                 <li>
-                    <a href="index.aspx">index</a>
+                    <a href="index.aspx">Add New Sensor</a>
                 </li>
                 <li>
                     <a href="AddRecording_Testpage.aspx">Add Recordings</a>
