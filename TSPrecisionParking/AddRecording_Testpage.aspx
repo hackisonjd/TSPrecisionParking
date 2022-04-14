@@ -23,7 +23,7 @@
         </div>
         <div style="margin-left: auto; margin-right: auto; text-align: center;">
             <h3>Select sensor</h3>
-            <asp:DropDownList ID="ddlSensors" runat="server" DataSourceID="sqlsrcSensors" DataTextField="SensorID" DataValueField="SensorID" AutoPostBack="true"></asp:DropDownList><br />
+            <asp:DropDownList ID="ddlSensors" runat="server" DataSourceID="sqlsrcSensors" DataTextField="LocationName" DataValueField="SensorID" AutoPostBack="true"></asp:DropDownList><br />
             <br />
             <asp:CheckBox ID="ckbxReading" Text="Spot taken?" runat="server" />
             <br />
@@ -32,7 +32,7 @@
 
             <asp:SqlDataSource ID="sqlsrcSensors" runat="server"
                 ConnectionString="<%$ ConnectionStrings:TSPP %>"
-                SelectCommand="SELECT SensorID FROM Sensor"></asp:SqlDataSource>
+                SelectCommand="SELECT Sensor.SensorID, LocationName FROM Sensor JOIN Location ON Sensor.LocationID = Location.LocationID;"></asp:SqlDataSource>
         </div>
     </form>
 </body>

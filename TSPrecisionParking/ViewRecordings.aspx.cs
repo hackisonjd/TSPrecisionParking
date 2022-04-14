@@ -17,9 +17,13 @@ namespace TSPrecisionParking
         protected void ddlSensors_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlSensors.SelectedValue == "ALL")
-                sqlsrcRecords.SelectCommand = "SELECT * FROM Record;";
+                sqlsrcRecords.SelectCommand = "SELECT Sensor.SensorID, LocationName, RecordTimestamp, Reading " +
+                    "FROM Record JOIN Sensor ON Record.SensorID = Sensor.SensorID " +
+                    "JOIN Location ON Sensor.LocationID = Location.LocationID;";
             else
-                sqlsrcRecords.SelectCommand = "SELECT * FROM Record WHERE SensorID = '" + ddlSensors.SelectedValue + "';";
+                sqlsrcRecords.SelectCommand = "SELECT Sensor.SensorID, LocationName, RecordTimestamp, Reading " +
+                    "FROM Record JOIN Sensor ON Record.SensorID = Sensor.SensorID " +
+                    "JOIN Location ON Sensor.LocationID = Location.LocationID WHERE Sensor.SensorID = '" + ddlSensors.SelectedValue + "';";
         }
     }
 }

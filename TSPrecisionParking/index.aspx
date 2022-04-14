@@ -25,13 +25,13 @@
         <div style="margin-left: auto; margin-right: auto; text-align: center;">
             <asp:Button ID="btnNew" runat="server" Text="New Sensor" OnClick="btnNew_Click" />
             <br />
-            <asp:DropDownList ID="ddlSensors" runat="server" DataSourceID="sqlsrcListSensors" DataTextField="SensorID" DataValueField="SensorID" AutoPostBack="true"></asp:DropDownList><br />
+            <asp:DropDownList ID="ddlSensors" runat="server" DataSourceID="sqlsrcListSensors" DataTextField="LocationName" DataValueField="SensorID" AutoPostBack="true"></asp:DropDownList><br />
             <asp:Button ID="btnLaunch" runat="server" Text="Launch Sensor" OnClick="btnLaunch_Click" />
             <br />
         </div>
         <asp:SqlDataSource ID="sqlsrcListSensors" runat="server"
             ConnectionString="<%$ ConnectionStrings:TSPP %>"
-            SelectCommand="SELECT SensorID FROM Sensor;"></asp:SqlDataSource>
+            SelectCommand="SELECT Sensor.SensorID, LocationName FROM Sensor JOIN Location ON Sensor.LocationID = Location.LocationID;"></asp:SqlDataSource>
     </form>
 </body>
 </html>
